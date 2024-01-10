@@ -1,0 +1,297 @@
+
+p{
+    color: white;
+}
+
+.p-color{
+    color:black
+}
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+$profileBg:#fff;
+$skillsBg:#3d3e42;
+$profileColor:#9099a0;
+$skillsColor:#9099a0; 
+$linkColor:#66cc99;
+$boldColor:#4a4e51;
+$time:0.6s;
+
+ 
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (max-width: 1500px)  { @content; }
+  }
+  @if $point == mama-bear {
+    @media (max-width: 1200px)  { @content; }
+  }
+  @if $point == brother-bear {
+    @media (max-width: 850px)  { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 450px)  { @content; }
+  }
+}
+
+*, *::after, *::before {
+  box-sizing:border-box;
+}
+
+html,body {
+  height: 100%;
+
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:16px;
+  line-height:1.5em;
+}
+a{color:$linkColor; text-decoration:none;}
+.clearfix::after, .clearfix::before {
+  content: " ";
+	display: table;
+}
+.clearfix::after{clear:both;}
+.bold {color:$boldColor; font-weight:400;}
+
+.resume-wrapper {
+  position:relative;
+  text-align:center;
+  height:100%;
+}
+
+.container {
+  min-height:300px;
+} 
+
+.profile {
+  background:$profileBg;
+  width:40%;
+  float:left;
+  color:$profileColor;
+  @include breakpoint(brother-bear) { width: 100%; }
+  .name-wrapper {
+    float:center;
+    width:50%;
+  }
+  h1 {
+    font-size:3.5em;
+    text-align:left;
+    font-family: 'Varela Round', sans-serif;
+    color:$boldColor;
+    text-transform:uppercase;
+    line-height:1em;
+    padding-top:40px; 
+    @include breakpoint(mama-bear) {
+       padding-top:20px;
+    }
+    @include breakpoint(baby-bear) {
+      font-size:1.8em;  
+      padding-top:20px;
+    } 
+  }
+  li {
+      margin-bottom:10px;
+    }
+  .picture-resume-wrapper {
+    width: 40%;
+    display:block;
+    float:left;
+    @include breakpoint(mama-bear) {
+       width:100%;
+    }
+  }
+  .picture-resume {
+    width:520px;
+    height:420px;
+    background-size:cover;
+    border-radius:50%;
+    margin-right:0px;
+    display:table;
+    position:relative;
+    vertical-align:middle;
+    span {
+        display:table-cell;
+        vertical-align: middle;
+        position:relative;
+        margin:0 auto;
+        z-index:10;
+       text-align:center
+    }
+    img {
+      border-radius:50%;
+      width:400px;
+      @include breakpoint(papa-bear) {
+        width:80px;
+      }
+      @include breakpoint(mama-bear) {
+        width:120px;
+        height:120px;
+      }
+    }
+    @include breakpoint(papa-bear) {
+      width:150px;
+      height:150px;
+    }
+    @include breakpoint(mama-bear) {
+      width:200px;
+      height:200px;
+    }
+     @include breakpoint(baby-bear) { width:180px;height:180px; } 
+  }
+  
+  .list-titles {
+    float:left;
+    text-align:left;
+    font-weight:600;
+    width:40%;
+    color: boldColor;
+  }
+  .list-content{
+    float:left;
+    width:60%;
+    text-align:left;
+    font-weight:300;
+  }
+  
+  
+  
+
+}
+.experience {
+  background:$skillsBg;
+  width: 60%;
+  float:left;
+  position:relative;
+  color: skillsColor;
+  font-weight:300;
+  min-height:100%;
+  min-height:100vh;
+  @include breakpoint(brother-bear) { width: 100%; } 
+  h3.experience-title {
+    color:$linkColor;
+    text-align:left;
+    text-transform:uppercase;
+    font-size:1.2em;
+    margin-bottom:20px;
+    font-weight:400;
+  }
+  .company-wrapper {
+    width:30%;
+    float:left;
+    text-align:left;
+    padding-right:5%;
+    margin-bottom:60px;
+    @include breakpoint(baby-bear) {width:100%; margin-bottom:20px;} 
+  }
+  .job-wrapper {
+    width:70%;
+    float:left;
+    text-align:left;
+    padding-right:5%;
+    margin-bottom:60px;
+    @include breakpoint(baby-bear) {width:100%;margin-bottom:40px;} 
+  }
+  .experience-title {
+      color:white;
+      margin-bottom:15px;;
+    }
+}
+
+.section-padding {
+ padding:60px 60px 40px 40px;
+ 
+}
+
+
+
+@keyframes skill_1 {from {width:0%;}to {width:80%;}}
+@keyframes skill_2 {from {width:0%;}to {width:90%;}}
+@keyframes skill_3 {from {width:0%;}to {width:50%;}}
+@keyframes skill_4 {from {width:0%;}to {width:60%;}}
+@keyframes skill_5 {from {width:0%;}to {width:70%;}}  
+@keyframes skill_6 {from {width:0%;}to {width:70%;}}
+@keyframes skill_7 {from {width:0%;}to {width:70%;}}
+  
+
+body{
+ 
+  align-items: center;
+  justify-content: center;
+} 
+.container .skill-box{
+  text-align: left;
+}
+
+.skill-box .title{
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+.skill-box .skill-bar{
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 30px;
+  background: rgba(0,0,0,0.1);
+}
+.skill-bar .skill-per{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 90%;
+  border-radius: 6px;
+  background: rgb(255, 253, 115);
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.skill-per.css{
+  width: 70%;
+  animation-delay: 0.1s;
+}
+.skill-per.javascript{
+  width: 50%;
+  animation-delay: 0.2s;
+}
+.skill-per.nodejs{
+  width: 30%;
+  animation-delay: 0.3s;
+}
+@keyframes progress {
+  0%{
+      width: 0;
+      opacity: 1;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+.skill-per .tooltip{
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: black;
+  z-index: 1;
+}
+.tooltip::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: black;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
